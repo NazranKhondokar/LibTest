@@ -1,10 +1,10 @@
 package com.rokomari.authlib.formvalidator.widget;
 
 import android.content.Context;
+import android.support.v7.widget.AppCompatAutoCompleteTextView;
 import android.util.AttributeSet;
 import android.widget.EditText;
 
-import androidx.appcompat.widget.AppCompatAutoCompleteTextView;
 
 import com.rokomari.authlib.formvalidator.Validatable;
 import com.rokomari.authlib.formvalidator.validation.DefaultEditTextValidator;
