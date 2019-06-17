@@ -2,12 +2,12 @@ package com.rokomari.authlib.formvalidator.validation;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.support.design.widget.TextInputLayout;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.ViewParent;
 import android.widget.EditText;
 
-import com.google.android.material.textfield.TextInputLayout;
 import com.rokomari.authlib.R;
 import com.rokomari.authlib.formvalidator.validator.composite.AndValidator;
 import com.rokomari.authlib.formvalidator.validator.composite.CompositeValidator;
