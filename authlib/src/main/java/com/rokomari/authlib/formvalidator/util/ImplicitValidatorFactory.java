@@ -23,6 +23,7 @@ import com.rokomari.authlib.formvalidator.validator.pattern.AlphaValidator;
 import com.rokomari.authlib.formvalidator.validator.pattern.DomainValidator;
 import com.rokomari.authlib.formvalidator.validator.pattern.EmailValidator;
 import com.rokomari.authlib.formvalidator.validator.pattern.IpAddressValidator;
+import com.rokomari.authlib.formvalidator.validator.pattern.PasswordValidator;
 import com.rokomari.authlib.formvalidator.validator.pattern.PatternValidator;
 import com.rokomari.authlib.formvalidator.validator.pattern.PersonFullNameValidator;
 import com.rokomari.authlib.formvalidator.validator.pattern.PersonNameValidator;
@@ -157,6 +158,10 @@ public class ImplicitValidatorFactory {
 
             case PERSON_FULL_NAME:
                 validator = new PersonFullNameValidator(context.getString(R.string.error_not_valid_person_full_name));
+                break;
+
+            case PASSWORD:
+                validator = new PasswordValidator(context.getString(R.string.error_password_not_valid));
                 break;
 
             case DATE:

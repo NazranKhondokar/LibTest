@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Toast Lib</string>
+    <string name="app_name">Lib</string>
     <string name="error_only_numeric_digits_allowed">Only numeric digits are allowed.</string>
     <string name="error_only_numeric_digits_range_allowed">Only numeric digits within the range %1$s - %2$s are allowed.</string>
     <string name="error_this_field_cannot_contain_special_character">This field cannot contain any special character</string>
@@ -14,4 +14,5 @@
     <string name="error_not_valid_person_name">Not a valid first or last name.</string>
     <string name="error_not_valid_person_full_name">Not a valid full name.</string>
     <string name="error_date_not_valid">Format not valid</string>
+    <string name="error_password_not_valid">Minimum eight characters, at least one letter and one number</string>
 </resources>
