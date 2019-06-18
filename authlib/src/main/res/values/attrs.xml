@@ -19,6 +19,7 @@
             <enum name="date" value="13" />
             <enum name="numericRange" value="14" />
             <enum name="floatNumericRange" value="15" />
+            <enum name="password" value="16" />
         </attr>
 
         <attr name="errorMessage" format="string" />
