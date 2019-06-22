@@ -1,4 +1,4 @@
-package com.rokomari.authlib;
+package com.rokomari.authlib.formvalidator;
 
 import android.text.Editable;
 import android.text.TextWatcher;
