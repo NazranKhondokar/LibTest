@@ -9,8 +9,7 @@ import okhttp3.Response;
  */
 public abstract class StringCallback extends Callback<String> {
     @Override
-    public Response parseNetworkResponse(Response response, int id) throws IOException {
-        //return response.body().string();
-        return response;
+    public String parseNetworkResponse(Response response, int id) throws IOException {
+        return response.body().string();
     }
 }
