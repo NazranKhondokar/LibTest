@@ -74,7 +74,7 @@ public class RequestCall {
         buildCall(callback);
 
         if (callback != null) {
-            callback.onBefore(request, getOkHttpRequest().getId());
+            callback.onBeforeCall(request, getOkHttpRequest().getId());
         }
 
         OkHttpUtils.getInstance().execute(this, callback);

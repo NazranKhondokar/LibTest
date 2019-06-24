@@ -137,7 +137,7 @@ public class OkHttpUtils {
 
         mPlatform.execute(() -> {
             callback.onError(call, e, id);
-            callback.onAfter(id);
+            callback.onAfterCall(id);
         });
     }
 
@@ -145,7 +145,7 @@ public class OkHttpUtils {
         if (callback == null) return;
         mPlatform.execute(() -> {
             callback.onResponse(object, id);
-            callback.onAfter(id);
+            callback.onAfterCall(id);
         });
     }
 

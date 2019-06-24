@@ -10,7 +10,7 @@ public abstract class Callback<T> {
      *
      * @param request
      */
-    public void onBefore(Request request, int id) {
+    public void onBeforeCall(Request request, int id) {
     }
 
     /**
@@ -18,7 +18,7 @@ public abstract class Callback<T> {
      *
      * @param
      */
-    public void onAfter(int id) {
+    public void onAfterCall(int id) {
     }
 
     /**
@@ -45,7 +45,7 @@ public abstract class Callback<T> {
      *
      * @param response
      */
-    public abstract T parseNetworkResponse(Response response, int id) throws Exception;
+    public abstract Response parseNetworkResponse(Response response, int id) throws Exception;
 
     public abstract void onError(Call call, Exception e, int id);
 
@@ -55,7 +55,7 @@ public abstract class Callback<T> {
     public static Callback CALLBACK_DEFAULT = new Callback() {
 
         @Override
-        public Object parseNetworkResponse(Response response, int id) throws Exception {
+        public Response parseNetworkResponse(Response response, int id) throws Exception {
             return null;
         }
 
