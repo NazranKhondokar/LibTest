@@ -25,8 +25,9 @@ public abstract class FileCallBack extends Callback<File> {
 
 
     @Override
-    public File parseNetworkResponse(Response response, int id) throws Exception {
-        return saveFile(response, id);
+    public Response parseNetworkResponse(Response response, int id) throws Exception {
+        //return saveFile(response, id);
+        return response;
     }
 
 
