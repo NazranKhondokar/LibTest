@@ -1,5 +1,7 @@
 package com.rokomari.authlib.okhttp.callback;
 
+import android.util.Log;
+
 import com.google.gson.Gson;
 import com.rokomari.authlib.okhttp.ResponseListener;
 
@@ -21,14 +23,10 @@ public abstract class StringCallback<T> extends Callback<String> {
     }
 
     @Override
-    public String parseNetworkResponse(Response response, int id) {
+    public String parseNetworkResponse(Response response, int id) throws IOException {
         responseListener.onResponse(response);
-        String responseToString = null;
-        try {
-            responseToString = response.body().string();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        String responseToString = response.body().string();
+        Log.e("responseToString", responseToString);
         responseObject = new Gson().fromJson(responseToString, (Class<T>) responseObject);
         responseListener.onResponseObject(responseObject);
         return responseToString;
