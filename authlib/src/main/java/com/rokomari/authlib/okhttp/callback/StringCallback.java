@@ -12,7 +12,7 @@ import okhttp3.Response;
  */
 public abstract class StringCallback<T> extends Callback<String> {
 
-    private ResponseListener responseListener;
+    private ResponseListener<T> responseListener;
     private T responseObject;
 
     public StringCallback(T responseObject, ResponseListener<T> responseListener) {
@@ -21,10 +21,15 @@ public abstract class StringCallback<T> extends Callback<String> {
     }
 
     @Override
-    public String parseNetworkResponse(Response response, int id) throws IOException {
+    public String parseNetworkResponse(Response response, int id) {
         responseListener.onResponse(response);
-        String responseToString = response.body().string();
-        responseObject = new Gson().fromJson(responseToString, (Class<T>) responseObject.getClass());
+        String responseToString = null;
+        try {
+            responseToString = response.body().string();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        responseObject = new Gson().fromJson(responseToString, (Class<T>) responseObject);
         responseListener.onResponseObject(responseObject);
         return responseToString;
     }
