@@ -15,7 +15,7 @@ public abstract class StringCallback<T> extends Callback<String> {
     private ResponseListener responseListener;
     private T responseObject;
 
-    public StringCallback(T responseObject, ResponseListener responseListener) {
+    public StringCallback(T responseObject, ResponseListener<T> responseListener) {
         this.responseObject = responseObject;
         this.responseListener = responseListener;
     }
