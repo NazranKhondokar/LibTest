@@ -23,7 +23,8 @@ public abstract class StringCallback<T> extends Callback<String> {
     @Override
     public String parseNetworkResponse(Response response, int id) throws IOException {
         responseListener.onResponse(response);
-        responseListener.onResponseObject(new Gson().fromJson(response.body().string(), responseObject.getClass()));
-        return response.body().string();
+        String responseToString = response.body().string();
+        responseListener.onResponseObject(new Gson().fromJson(responseToString, responseObject.getClass()));
+        return responseToString;
     }
 }
