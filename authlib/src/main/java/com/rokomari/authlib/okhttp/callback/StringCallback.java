@@ -13,7 +13,7 @@ public abstract class StringCallback extends Callback<String> {
 
     private ResponseListener responseListener;
 
-    StringCallback(ResponseListener responseListener) {
+    public StringCallback(ResponseListener responseListener) {
         this.responseListener = responseListener;
     }
 
