@@ -5,6 +5,8 @@ import com.rokomari.authlib.okhttp.callback.StringCallback;
 
 import java.util.Map;
 
+import okhttp3.MediaType;
+
 /**
  * Created by user on 6/23/2019.
  */
@@ -13,15 +15,17 @@ public class AuthRequest<T> {
 
     private String mBaseUrl;
     private String endPoint;
+    private String mediaType;
     private Map<String, String> headers;
     private Map<String, String> params;
     private T obj;
     private StringCallback stringCallback;
 
-    public AuthRequest(String mBaseUrl, String endPoint, Map<String, String> headers, T obj, StringCallback stringCallback) {
+    public AuthRequest(String mBaseUrl, String endPoint, Map<String, String> headers, String mediaType, T obj, StringCallback stringCallback) {
         this.mBaseUrl = mBaseUrl;
         this.endPoint = endPoint;
         this.headers = headers;
+        this.mediaType = mediaType;
         this.obj = obj;
         this.stringCallback = stringCallback;
     }
@@ -46,6 +50,7 @@ public class AuthRequest<T> {
                 .url(url)
                 .headers(headers)
                 .content(new Gson().toJson(obj))
+                .mediaType(MediaType.parse(mediaType))
                 .build()
                 .execute(stringCallback);
     }
