@@ -26,7 +26,7 @@ public abstract class StringCallback<T> extends Callback<String> {
     public String parseNetworkResponse(Response response, int id) throws IOException {
         responseListener.onResponse(response);
         String responseToString = response.body().string();
-        responseObject = new Gson().fromJson(responseToString, (Class<T>) responseObject);
+        responseObject = new Gson().fromJson(responseToString, (Class<T>) responseObject.getClass());
         responseListener.onResponseObject(responseObject);
         return responseToString;
     }
