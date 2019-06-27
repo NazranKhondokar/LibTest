@@ -10,7 +10,9 @@ public class Options {
     public String errorMessage;
     public boolean required = true;
     public ValidationType validationType;
+    public HintType hintType;
     public String customValidationType;
+    public String customHintType;
 
     public String regex;
     public String dateFormat;

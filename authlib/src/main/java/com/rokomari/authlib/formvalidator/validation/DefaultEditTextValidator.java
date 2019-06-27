@@ -9,6 +9,7 @@ import android.view.ViewParent;
 import android.widget.EditText;
 
 import com.rokomari.authlib.R;
+import com.rokomari.authlib.formvalidator.model.HintType;
 import com.rokomari.authlib.formvalidator.validator.composite.AndValidator;
 import com.rokomari.authlib.formvalidator.validator.composite.CompositeValidator;
 import com.rokomari.authlib.formvalidator.validator.Validator;
@@ -44,6 +45,7 @@ public class DefaultEditTextValidator implements EditTextValidator {
 
     private void setupDynamically(EditText editText, Context context) {
         options.validationType = ValidationType.NOT_EMPTY;
+        options.hintType = HintType.NOT_EMPTY;
         this.editText = editText;
         setupValidator(context);
     }
@@ -66,8 +68,12 @@ public class DefaultEditTextValidator implements EditTextValidator {
         int validationTypeValue = typedArray.getInt(R.styleable.FormEditText_validationType, ValidationType.NOT_DETECTABLE.value);
         options.validationType = ValidationType.fromValue(validationTypeValue);
 
+        int hintTypeValue = typedArray.getInt(R.styleable.FormEditText_hintType, HintType.NOT_DETECTABLE.value);
+        options.hintType = HintType.fromValue(hintTypeValue);
+
         options.errorMessage = typedArray.getString(R.styleable.FormEditText_errorMessage);
         options.customValidationType = typedArray.getString(R.styleable.FormEditText_customValidationType);
+        options.customHintType = typedArray.getString(R.styleable.FormEditText_customHintType);
         options.regex = typedArray.getString(R.styleable.FormEditText_regex);
         options.emptyErrorMessage = typedArray.getString(R.styleable.FormEditText_requiredErrorMessage);
         options.dateFormat = typedArray.getString(R.styleable.FormEditText_dateFormat);
@@ -152,6 +158,7 @@ public class DefaultEditTextValidator implements EditTextValidator {
 
     public void setRegex(String regex, Context context) {
         options.validationType = ValidationType.REGEX;
+        options.hintType = HintType.REGEX;
         options.regex = regex;
         setupValidator(context);
     }
@@ -168,6 +175,11 @@ public class DefaultEditTextValidator implements EditTextValidator {
 
     public void setValidationType(ValidationType validationType) {
         options.validationType = validationType;
+        setupValidator(editText.getContext());
+    }
+
+    public void setHintType(HintType hintType) {
+        options.hintType = hintType;
         setupValidator(editText.getContext());
     }
 
@@ -189,6 +201,10 @@ public class DefaultEditTextValidator implements EditTextValidator {
 
     public ValidationType getValidationType() {
         return options.validationType;
+    }
+
+    public HintType getHintType() {
+        return options.hintType;
     }
 
     @Override

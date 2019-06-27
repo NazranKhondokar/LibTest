@@ -22,10 +22,23 @@
             <enum name="password" value="16" />
         </attr>
 
+        <attr name="hintType">
+            <enum name="regex" value="0" />
+            <enum name="firstName" value="1" />
+            <enum name="middleName" value="2" />
+            <enum name="lastName" value="3" />
+            <enum name="email" value="4" />
+            <enum name="phoneNumber" value="5" />
+            <enum name="password" value="6" />
+            <enum name="confirmPassword" value="7" />
+            <enum name="required" value="8" />
+        </attr>
+
         <attr name="errorMessage" format="string" />
         <attr name="requiredErrorMessage" format="string" />
 
         <attr name="customValidationType" format="string" />
+        <attr name="customHintType" format="string" />
         <attr name="regex" format="string" />
         <attr name="dateFormat" format="string" />
         <attr name="required" format="boolean" />

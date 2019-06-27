@@ -21,7 +21,6 @@ public enum ValidationType {
     NUMERIC_RANGE(14),
     FLOAT_NUMERIC_RANGE(15),
     PASSWORD(16),
-    CONFIRM_PASSWORD(17),
     NOT_DETECTABLE(2000);
 
     public int value;
