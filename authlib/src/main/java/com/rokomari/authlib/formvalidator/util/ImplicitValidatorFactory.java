@@ -82,6 +82,10 @@ public class ImplicitValidatorFactory {
         );
     }
 
+    /**
+     * @param options is for different changing type of a editText
+     * @param editText pass the custom editText
+     */
     private static void setEditTextHint(Options options, EditText editText) {
         switch (options.hintType) {
 

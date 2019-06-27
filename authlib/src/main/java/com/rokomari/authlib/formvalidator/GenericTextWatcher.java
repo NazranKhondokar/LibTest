@@ -7,11 +7,16 @@ import com.rokomari.authlib.formvalidator.widget.FormEditText;
 
 /**
  * Created by user on 6/18/2019.
+ * a common text watcher for different custom editText
  */
 
 public class GenericTextWatcher implements TextWatcher {
 
     private FormEditText mFormEditText;
+
+    /**
+     * @param mFormEditText receive a custom editText to validate character by character
+     */
     public GenericTextWatcher(FormEditText mFormEditText) {
         this.mFormEditText = mFormEditText;
     }
