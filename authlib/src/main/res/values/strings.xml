@@ -15,4 +15,11 @@
     <string name="error_not_valid_person_full_name">Not a valid full name.</string>
     <string name="error_date_not_valid">Format not valid</string>
     <string name="error_password_not_valid">Minimum eight characters, at least one letter and one number</string>
+    <string name="hint_first_name">First Name</string>
+    <string name="hint_middle_name">Middle Name</string>
+    <string name="hint_last_name">Last Name</string>
+    <string name="hint_phone">Phone Number</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_confirm_password">Confirm Password</string>
 </resources>

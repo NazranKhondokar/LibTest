@@ -107,7 +107,7 @@ public class DefaultEditTextValidator implements EditTextValidator {
 
         mValidator = new AndValidator();
 
-        addValidator(ImplicitValidatorFactory.validator(options, context));
+        addValidator(ImplicitValidatorFactory.validator(options, context, editText));
     }
 
     @Override

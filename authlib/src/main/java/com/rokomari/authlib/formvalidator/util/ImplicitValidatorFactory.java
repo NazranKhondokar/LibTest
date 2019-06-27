@@ -3,6 +3,7 @@ package com.rokomari.authlib.formvalidator.util;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.text.TextUtils;
+import android.widget.EditText;
 
 import com.annimon.stream.Optional;
 import com.annimon.stream.Stream;
@@ -34,9 +35,19 @@ public class ImplicitValidatorFactory {
 
     public static Validator validator(
             Options options,
-            Context context
+            Context context,
+            EditText editText
     ){
         Validator validator;
+
+        switch (options.hintType){
+            case NOT_DETECTABLE:
+                break;
+
+            default:
+                setEditTextHint(options, editText);
+                break;
+        }
 
         switch (options.validationType){
             case NOT_DETECTABLE:
@@ -69,6 +80,37 @@ public class ImplicitValidatorFactory {
                 new InverseValidator(new RequiredValidator()),
                 validator
         );
+    }
+
+    private static void setEditTextHint(Options options, EditText editText) {
+        switch (options.hintType) {
+
+            default:
+            case NOT_EMPTY:
+
+                break;
+            case FIRST_NAME:
+                editText.setHint(R.string.hint_first_name);
+                break;
+            case MIDDLE_NAME:
+                editText.setHint(R.string.hint_middle_name);
+                break;
+            case LAST_NAME:
+                editText.setHint(R.string.hint_last_name);
+                break;
+            case EMAIL:
+                editText.setHint(R.string.hint_email);
+                break;
+            case PHONE_NUMBER:
+                editText.setHint(R.string.hint_phone);
+                break;
+            case PASSWORD:
+                editText.setHint(R.string.hint_password);
+                break;
+            case CONFIRM_PASSWORD:
+                editText.setHint(R.string.hint_confirm_password);
+                break;
+        }
     }
 
     private static Validator customValidator(Options options, Context context) {
