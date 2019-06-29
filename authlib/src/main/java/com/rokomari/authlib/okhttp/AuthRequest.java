@@ -41,7 +41,7 @@ public class AuthRequest<T> {
     }
 
     /**
-     * when no request object available
+     * when no request object and parameters available
      */
     public AuthRequest(String mBaseUrl, String endPoint, Map<String, String> headers, StringCallback stringCallback) {
         this.mBaseUrl = mBaseUrl;
@@ -83,6 +83,7 @@ public class AuthRequest<T> {
 
     /**
      * for GET request
+     * Also for GET request content type parameter not needed
      */
     public void callGET() {
         String url = mBaseUrl + endPoint;
