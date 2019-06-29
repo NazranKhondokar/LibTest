@@ -20,13 +20,16 @@ allprojects {
 	        implementation 'com.github.NazranKhondokar:LibTest:0.3.2'
 	}
 ```
-**Step 3**. For above Java 8
+**Step 3**. For above Java 8 add at app level gradle
 
 ```
+android {
+    ...
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+}
 ```
 **Step 4**. Add this code to your Application class
 
