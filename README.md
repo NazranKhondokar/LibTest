@@ -17,7 +17,7 @@ allprojects {
 
 ```
 	dependencies {
-	        implementation 'com.github.NazranKhondokar:LibTest:0.3.2'
+	        implementation 'com.github.NazranKhondokar:LibTest:0.3.3'
 	}
 ```
 **Step 3**. For above Java 8 add at app level gradle
@@ -107,6 +107,12 @@ android {
 ```
 ```
     /**
+     * @param listCallback if request return json array of objects it will call back the json array object lists
+     */
+    AuthRequest(... ListCallback listCallback) {}
+```
+```
+    /**
      * when POST request and parameters available
      */
      callPOSTWithParams()
@@ -116,6 +122,18 @@ android {
      * when GET request and parameters available
      */
      callGETWithParams()
+```
+```
+    /**
+     * if request return json array of objects it will call back the json array object lists
+     */
+    callGETJsonArrayObjects()
+```
+```
+    /**
+     * if request return json array of objects it will call back the json array object lists, POST request with params
+     */
+    callPOSTJsonArrayObjectsTWithParams()
 ```
 ## For Auto validation
 
