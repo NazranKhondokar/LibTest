@@ -229,7 +229,7 @@ public class AuthRequest<T> {
     }
 
     /**
-     * for PUT request, for PUT request content type added to header
+     * for PUT request
      */
     public void callPUT() {
         String url = mBaseUrl + endPoint;
@@ -243,7 +243,7 @@ public class AuthRequest<T> {
     }
 
     /**
-     * for DELETE request, for DELETE request content type added to header
+     * for DELETE request
      */
     public void callDELETE() {
         String url = mBaseUrl + endPoint;
