@@ -17,7 +17,7 @@ allprojects {
 
 ```
 	dependencies {
-	        implementation 'com.github.NazranKhondokar:LibTest:0.3.2'
+	        implementation 'com.github.NazranKhondokar:LibTest:0.3.3'
 	}
 ```
 **Step 3**. For above Java 8 add at app level gradle
