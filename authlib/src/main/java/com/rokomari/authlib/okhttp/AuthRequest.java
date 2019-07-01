@@ -11,6 +11,7 @@ import com.rokomari.authlib.okhttp.callback.StringCallback;
 import java.util.Map;
 
 import okhttp3.MediaType;
+import okhttp3.RequestBody;
 
 /**
  *
@@ -188,7 +189,7 @@ public class AuthRequest<T> {
     /**
      * if request return json array of objects it will call back the json array object lists
      */
-    public void callPOSJsonArrayObjectsTWithParams() {
+    public void callPOSTJsonArrayObjectsTWithParams() {
         String url = mBaseUrl + endPoint;
         OkHttpUtils
                 .post()
@@ -225,6 +226,34 @@ public class AuthRequest<T> {
                 .params(params)
                 .build()
                 .execute(listCallback);
+    }
+
+    /**
+     * for PUT request, for PUT request content type added to header
+     */
+    public void callPUT() {
+        String url = mBaseUrl + endPoint;
+        OkHttpUtils
+                .put()
+                .url(url)
+                .requestBody(RequestBody.create(MediaType.parse(mediaType), new Gson().toJson(object)))
+                .headers(headers)
+                .build()
+                .execute(stringCallback);
+    }
+
+    /**
+     * for DELETE request, for DELETE request content type added to header
+     */
+    public void callDELETE() {
+        String url = mBaseUrl + endPoint;
+        OkHttpUtils
+                .delete()
+                .url(url)
+                .requestBody(RequestBody.create(MediaType.parse(mediaType), new Gson().toJson(object)))
+                .headers(headers)
+                .build()
+                .execute(stringCallback);
     }
 
 }
