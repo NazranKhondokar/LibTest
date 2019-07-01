@@ -1,10 +1,12 @@
+/*
+ *  Copyright (c), Onnorokom Web Services Ltd (OWSL) and/or its affiliates. All rights reserved.
+ *  OWSL PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+ */
+
 package com.rokomari.authlib.okhttp;
 
 import java.net.HttpURLConnection;
 
-/**
- * Created by user on 6/23/2019.
- */
 
 public class StatusCode {
 

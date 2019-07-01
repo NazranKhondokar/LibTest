@@ -9,16 +9,11 @@ import okhttp3.Response;
 
 
 /**
- *
- * @param <T> response object
+ * Created by user on 6/25/2019.
  */
-public interface ResponseListener<T> {
+public interface ResponseListListener {
     /**
      * @param response callback response with contains all response contents
      */
     void onResponse(Response response);
-    /**
-     * @param responseObject callback the response object cast from json object
-     */
-    void onResponseObject(T responseObject);
 }
