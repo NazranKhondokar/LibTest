@@ -17,16 +17,19 @@ allprojects {
 
 ```
 	dependencies {
-	        implementation 'com.github.NazranKhondokar:LibTest:0.3.1'
+	        implementation 'com.github.NazranKhondokar:LibTest:0.3.2'
 	}
 ```
-**Step 3**. For above Java 8
+**Step 3**. For above Java 8 add at app level gradle
 
 ```
+android {
+    ...
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+}
 ```
 **Step 4**. Add this code to your Application class
 
@@ -46,10 +49,11 @@ allprojects {
                 .build();
         OkHttpUtils.initClient(okHttpClient);
 ```
+**Step 5**. Add Application class name to Manifest application
 
-**Step 5**. Make Two Pojo class for body and response
+**Step 6**. Make Two Pojo class for body and response
 
-**Step 6**. Then call like below
+**Step 7**. Then call like below
 
 ```
     private static final String BASE_URL = "";
@@ -87,6 +91,32 @@ allprojects {
     
 ```
 
+## Some variation
+
+```
+    /**
+     * when no request object and no parameters available, this time content type add to header
+     */
+    AuthRequest(String mBaseUrl, String endPoint, Map<String, String> headers, StringCallback stringCallback) {}
+```
+```
+    /**
+     * when no request object but headers, parameters available, this time content type add to header
+     */
+    AuthRequest(String mBaseUrl, String endPoint, Map<String, String> headers, Map<String, String> params, StringCallback stringCallback) {}
+```
+```
+    /**
+     * when POST request and parameters available
+     */
+     callPOSTWithParams()
+```
+```
+    /**
+     * when GET request and parameters available
+     */
+     callGETWithParams()
+```
 ## For Auto validation
 
 ```
