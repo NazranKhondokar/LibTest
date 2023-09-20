@@ -1,6 +1,6 @@
 # LibTest
 
-It works for auto validation for authentication and API call.
+It works for auto validation for authentication and API call. Published on [Jitpack.io](https://jitpack.io/#NazranKhondokar/LibTest)
 
 ## Setup:
 **Step 1**. Add the JitPack repository to your build file
