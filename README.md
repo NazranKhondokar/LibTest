@@ -5,7 +5,7 @@ It works for auto validation for authentication and API call. Published on [Jitp
 ## Setup:
 **Step 1**. Add the JitPack repository to your build file
 
-```
+```sh
 allprojects {
 		repositories {
 			...
@@ -15,14 +15,14 @@ allprojects {
 ```
 **Step 2**. Add the dependency
 
-```
+```sh
 	dependencies {
 	        implementation 'com.github.NazranKhondokar:LibTest:0.3.4'
 	}
 ```
 **Step 3**. For above Java 8 add at app level gradle
 
-```
+```sh
 android {
     ...
     compileOptions {
@@ -33,7 +33,7 @@ android {
 ```
 **Step 4**. Add this code to your Application class
 
-```
+```java
         ClearableCookieJar cookieJar1 = new PersistentCookieJar(new SetCookieCache(), new SharedPrefsCookiePersistor(getApplicationContext()));
 
         HttpsUtils.SSLParams sslParams = HttpsUtils.getSslSocketFactory(null, null, null);
@@ -55,7 +55,7 @@ android {
 
 **Step 7**. Then call like below
 
-```
+```java
     private static final String BASE_URL = "";
     private static final String TOKEN_VALUE = "";
     private static final String CONTENT_TYPE = "";
@@ -93,63 +93,72 @@ android {
 
 ## Some variation
 
-```
+```java
     /**
      * when no request object and no parameters available, this time content type add to header
      */
     AuthRequest(String mBaseUrl, String endPoint, Map<String, String> headers, StringCallback stringCallback) {}
 ```
-```
+
+```java
     /**
      * when no request object but headers, parameters available, this time content type add to header
      */
     AuthRequest(String mBaseUrl, String endPoint, Map<String, String> headers, Map<String, String> params, StringCallback stringCallback) {}
 ```
-```
+
+```java
     /**
      * @param listCallback if request return json array of objects it will call back the json array object lists
      */
     AuthRequest(... ListCallback listCallback) {}
 ```
-```
+
+```java
     /**
      * when POST request and parameters available
      */
      callPOSTWithParams()
 ```
-```
+
+```java
     /**
      * when GET request and parameters available
      */
      callGETWithParams()
 ```
-```
+
+```java
     /**
      * if request return json array of objects it will call back the json array object lists
      */
     callGETJsonArrayObjects()
 ```
-```
+
+```java
     /**
      * if request return json array of objects it will call back the json array object lists, POST request with params
      */
     callPOSTJsonArrayObjectsTWithParams()
 ```
-```
+
+```java
     /**
      * for PUT request
      */
     callPUT()
 ```
-```
+
+```java
     /**
      * for DELETE request
      */
     callDELETE()
 ```
+
 ## For Auto validation
 
-```
+```xml
     <com.rokomari.authlib.formvalidator.widget.FormEditText
     
         ...
